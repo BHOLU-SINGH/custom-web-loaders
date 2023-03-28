@@ -1,0 +1,172 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #111, #555);
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3em;
+    padding: 2em;
+}
+
+/* Loader 1 | Rotate Loader */
+.loader1{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border-top: 8px solid rgba(255, 255, 255, 1);
+    border-left: 8px solid rgba(255, 255, 255, 1);
+    border-right: 8px solid rgba(255, 255, 255, 0);
+    animation: spin 0.575s infinite linear;
+}
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+/* Loader 2 | Pulse Loader */
+.loader2{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #fff; 
+    animation: pulse 0.85s infinite linear;
+}
+@keyframes pulse {
+    0%{
+        transform: scale(0.15);
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 0;
+    }   
+}
+
+
+
+
+/* Loader 3 | Clock Loader */
+.loader3{
+    position: relative;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 2px solid #f9f9f9;
+}
+.loader3::after{
+    content: '';
+    position: absolute;
+    bottom: 29px;
+    left: 30px;
+    display: block;
+    transform-origin: 0% 100%;
+    width: 1px;
+    height: 24px;
+    background: #f9f9f9;
+    animation: tick 1s infinite linear;
+}
+@keyframes tick {
+    to{
+        transform: rotate(359deg);
+    }
+}
+
+
+/* Loader 4 | Glass Loader */
+.loader4{
+    transform: perspective(140px) rotateX(-45deg);
+    width: 32px;
+    height: 72px;
+    position: relative;
+    border: 2px solid #fff;
+    animation: load 1.5s infinite linear alternate;
+}
+@keyframes load {
+    0%{
+        box-shadow: 0 0 #ed3b65 inset;
+    }
+    100%{
+        box-shadow: 0 -70px #ed3b65 inset;
+    }
+}
+
+
+
+/* Loader 5 | Heart in circle Loader */
+.loader5{
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 2px 2px rgba(36, 108, 36, 0.847);
+    animation: rotate 3s infinite linear;
+    user-select: none;
+}
+.loader5 div{
+    position: absolute;
+    width: 95%;
+    height: 28%;
+    border-radius: 100%;
+}
+.loader5 div:nth-child(1){
+    transform: rotate(0deg);
+    border-top: 2px solid rgb(16, 213, 16);
+    border-left: 2px solid rgb(16, 213, 16);
+    border-right: 2px solid rgb(16, 213, 16);
+}
+.loader5 div:nth-child(2){
+    transform: rotate(60deg);
+    border-left: 2px solid rgb(16, 213, 16);
+    border-right: 2px solid rgb(16, 213, 16);
+    border-bottom: 2px solid rgb(16, 213, 16);
+}
+.loader5 div:nth-child(3){
+    transform: rotate(120deg);
+    border-left: 2px solid rgb(16, 213, 16);
+    border-right: 2px solid rgb(16, 213, 16);
+    border-top: 2px solid rgb(16, 213, 16);
+}
+@keyframes rotate{
+    to{
+        transform: rotate(360deg);
+    }
+}
+.loader5 span{
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    border: .5px solid rgb(16, 213, 16);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: .8em;
+    color: rgb(16, 213, 16);
+    animation: rotateReverse 3s infinite linear;
+}
+@keyframes rotateReverse{
+    to{
+        transform: rotate(-360deg);
+    }
+}
